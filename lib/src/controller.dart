@@ -287,6 +287,11 @@ class SlidableController {
         case ActionPaneType.none:
           break;
       }
+      actionPaneConfigurator = RatioConfigurator(
+        extentRatio: extentRatio,
+        normalizeRatio: (ratio) => ratio.clamp(-extentRatio, extentRatio),
+        handleEndGestureChanged: handleEndGestureChanged,
+      );
     } else {
       extentRatio = actionPaneConfigurator!.extentRatio;
     }
@@ -314,6 +319,11 @@ class SlidableController {
         case ActionPaneType.none:
           break;
       }
+      actionPaneConfigurator = RatioConfigurator(
+        extentRatio: extentRatio,
+        normalizeRatio: (ratio) => ratio.clamp(-extentRatio, extentRatio),
+        handleEndGestureChanged: handleEndGestureChanged,
+      );
     } else {
       extentRatio = actionPaneConfigurator!.extentRatio;
     }
